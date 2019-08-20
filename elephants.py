@@ -11,9 +11,11 @@ for single_line in lines:
     data.append(single_line)
 
 """Turning data into permutation list"""
-data[4] = []
 
-for elephants in range(1, int(data[0][0]) + 1):
+data.append([])
 
-    data[4].append(data[2][int(data[3].index(str(elephants)))])
-del data[2], data[3]
+for elephant in range(1, int(data[0][0]) + 1):
+
+    data[4].append(int(data[2].index(data[3][elephant-1])+1))
+
+del data[3], data[2]
