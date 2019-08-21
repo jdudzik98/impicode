@@ -16,7 +16,7 @@ data.append([])
 
 for elephant in range(1, int(data[0][0]) + 1):
 
-    data[4].append(data[2].index(data[3][elephant-1]) + 1)
+    data[4].append(data[2][data[3].index(str(elephant))])
 
 del data[3], data[2]
 
@@ -37,7 +37,7 @@ for i in range(len(data[3])):
             if len(cycles) != c:
                 cycles.append([])
             cycles[int(c)-1].append(x)
-            x = data[2][int(x)-1]
+            x = int(data[2][x-1])
 
 """Fetching cycles parameters"""
 
@@ -62,4 +62,3 @@ for i in range(c):
 
     if int(cycle_mins[i]) < int(minimal_weight):
         minimal_weight = cycle_mins[i]
-
