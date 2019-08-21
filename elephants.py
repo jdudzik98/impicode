@@ -61,4 +61,5 @@ for i in range(c):
             cycle_mins[i] = data[1][e-1]
 
     if int(cycle_mins[i]) < int(minimal_weight):
-        mininimal_weight = cycle_mins[i]
+        minimal_weight = cycle_mins[i]
+
