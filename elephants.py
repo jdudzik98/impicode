@@ -38,3 +38,27 @@ for i in range(len(data[3])):
                 cycles.append([])
             cycles[int(c)-1].append(x)
             x = data[2][int(x)-1]
+
+"""Fetching cycles parameters"""
+
+minimal_weight = 0
+cycle_weights = []
+cycle_mins = []
+
+for weight in data[1]:
+    minimal_weight = max(minimal_weight, int(weight))
+
+maximal_weight = minimal_weight
+
+for i in range(c):
+    cycle_weights.append(0)
+    cycle_mins.append(maximal_weight)
+
+    for e in cycles[i]:
+        cycle_weights[i] += int(data[1][e-1])
+
+        if int(data[1][e-1]) < int(cycle_mins[i]):
+            cycle_mins[i] = data[1][e-1]
+
+    if int(cycle_mins[i]) < int(minimal_weight):
+        mininimal_weight = cycle_mins[i]
