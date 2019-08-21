@@ -62,3 +62,13 @@ for i in range(c):
 
     if int(cycle_mins[i]) < int(minimal_weight):
         minimal_weight = cycle_mins[i]
+
+"""Calculating the output"""
+
+w = 0
+
+for i in range(c):
+    method_1 = cycle_weights[i] + (len(cycles[i]) - 2)*int(cycle_mins[i])
+    method_2 = cycle_weights[i] + int(cycle_mins[i]) + (len(cycles[i]) + 1)*int(minimal_weight)
+    w += min(method_1, method_2)
+print(w)
